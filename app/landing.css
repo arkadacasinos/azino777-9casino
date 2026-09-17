@@ -1,0 +1,482 @@
+/* ============================================================
+   Azino777 — фирменные стили лендинга
+   Уникальный префикс классов: az9-
+   ============================================================ */
+
+:root {
+  --az9-bg: #0b1210;
+  --az9-surface: #121c18;
+  --az9-surface-2: #18241f;
+  --az9-gold: #d4a940;
+  --az9-gold-soft: #e6c56a;
+  --az9-emerald: #1e7a4f;
+  --az9-text: #f2ede3;
+  --az9-muted: #9aa8a0;
+  --az9-border: #24332c;
+  --az9-font-display: var(--font-display, Georgia, serif);
+  --az9-font-body: var(--font-body, system-ui, -apple-system, sans-serif);
+}
+
+html {
+  background-color: var(--az9-bg);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--az9-bg);
+  color: var(--az9-text);
+  font-family: var(--az9-font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Базовая типографика ---------- */
+.az9-display {
+  font-family: var(--az9-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.az9-body {
+  font-family: var(--az9-font-body);
+}
+
+/* ---------- Контейнер ---------- */
+.az9-shell {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* ---------- Шапка ---------- */
+.az9-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(11, 18, 16, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--az9-border);
+}
+
+.az9-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+
+.az9-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--az9-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--az9-text);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.az9-logo__mark {
+  color: var(--az9-gold);
+}
+
+.az9-nav {
+  display: none;
+  align-items: center;
+  gap: 22px;
+}
+
+.az9-nav__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--az9-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.az9-nav__link:hover {
+  color: var(--az9-gold);
+}
+
+.az9-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--az9-gold) 0%, var(--az9-gold-soft) 100%);
+  color: #1a1406;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(212, 169, 64, 0.25);
+}
+
+.az9-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(212, 169, 64, 0.35);
+}
+
+.az9-cta--ghost {
+  background: transparent;
+  color: var(--az9-gold);
+  border: 1px solid var(--az9-gold);
+  box-shadow: none;
+}
+
+/* ---------- Герой ---------- */
+.az9-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 64px;
+}
+
+.az9-hero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.az9-hero__copy {
+  text-align: center;
+  max-width: 640px;
+}
+
+.az9-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--az9-gold);
+  margin-bottom: 16px;
+}
+
+.az9-hero__title {
+  font-size: clamp(34px, 8vw, 60px);
+  color: var(--az9-text);
+  margin-bottom: 18px;
+  text-wrap: balance;
+}
+
+.az9-hero__lead {
+  font-size: 17px;
+  color: var(--az9-muted);
+  margin-bottom: 26px;
+  text-wrap: pretty;
+}
+
+.az9-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.az9-hero__media {
+  width: 100%;
+  max-width: 720px;
+}
+
+.az9-figure {
+  margin: 0;
+}
+
+.az9-figure__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--az9-border);
+}
+
+/* ---------- Секции ---------- */
+.az9-section {
+  padding: 56px 0;
+}
+
+.az9-section--alt {
+  background-color: var(--az9-surface);
+}
+
+.az9-section__head {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.az9-section__title {
+  font-size: clamp(26px, 5vw, 38px);
+  color: var(--az9-text);
+  margin-bottom: 14px;
+  text-wrap: balance;
+}
+
+.az9-section__text {
+  font-size: 16px;
+  color: var(--az9-muted);
+  text-wrap: pretty;
+}
+
+.az9-section__text p {
+  margin: 0 0 16px;
+}
+
+.az9-section__text strong {
+  color: var(--az9-text);
+  font-weight: 600;
+}
+
+.az9-section__text em {
+  color: var(--az9-gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ---------- Сетка карточек ---------- */
+.az9-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.az9-tile {
+  background-color: var(--az9-surface-2);
+  border: 1px solid var(--az9-border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.az9-tile:hover {
+  border-color: var(--az9-gold);
+  transform: translateY(-2px);
+}
+
+.az9-tile__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(212, 169, 64, 0.12);
+  color: var(--az9-gold);
+  margin-bottom: 14px;
+}
+
+.az9-tile__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--az9-text);
+  margin-bottom: 8px;
+}
+
+.az9-tile__text {
+  font-size: 15px;
+  color: var(--az9-muted);
+}
+
+/* ---------- Медиа-блок ---------- */
+.az9-media {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+}
+
+.az9-media__figure {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ---------- Список преимуществ ---------- */
+.az9-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.az9-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--az9-muted);
+}
+
+.az9-list__mark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(30, 122, 79, 0.2);
+  color: var(--az9-emerald);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ---------- FAQ ---------- */
+.az9-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.az9-faq__item {
+  background-color: var(--az9-surface-2);
+  border: 1px solid var(--az9-border);
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.az9-faq__q {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--az9-text);
+  margin-bottom: 8px;
+}
+
+.az9-faq__a {
+  font-size: 15px;
+  color: var(--az9-muted);
+}
+
+/* ---------- Футер ---------- */
+.az9-footer {
+  background-color: #080d0b;
+  border-top: 1px solid var(--az9-border);
+  padding: 48px 0 32px;
+}
+
+.az9-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.az9-footer__brand {
+  font-family: var(--az9-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--az9-text);
+}
+
+.az9-footer__note {
+  font-size: 13px;
+  color: var(--az9-muted);
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.az9-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.az9-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background-color: var(--az9-surface-2);
+  border: 1px solid var(--az9-border);
+  color: var(--az9-muted);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.az9-tag:hover {
+  color: var(--az9-gold);
+  border-color: var(--az9-gold);
+}
+
+.az9-footer__bottom {
+  border-top: 1px solid var(--az9-border);
+  margin-top: 24px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: var(--az9-muted);
+}
+
+/* ---------- Адаптивность (mobile-first, усиление на планшетах) ---------- */
+@media (min-width: 640px) {
+  .az9-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .az9-nav {
+    display: flex;
+  }
+
+  .az9-hero {
+    padding: 80px 0 88px;
+  }
+
+  .az9-hero__grid {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 48px;
+  }
+
+  .az9-hero__copy {
+    text-align: left;
+    flex: 1;
+  }
+
+  .az9-hero__actions {
+    justify-content: flex-start;
+  }
+
+  .az9-hero__media {
+    flex: 1;
+  }
+
+  .az9-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .az9-media {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .az9-media__figure {
+    flex: 1;
+  }
+
+  .az9-media__body {
+    flex: 1;
+  }
+
+  .az9-footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
