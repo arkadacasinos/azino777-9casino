@@ -88,6 +88,7 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        <meta name="yandex-verification" content="cc3adce97a6b1982" />
         <link rel="canonical" href="https://azino777-9casino.vercel.app/" />
         <meta name="format-detection" content="telephone=no" />
         {/* Дополнительные пользовательские теги можно вставлять ниже */}
